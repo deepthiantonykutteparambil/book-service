@@ -19,64 +19,33 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/books")
+@RequestMapping("")
 public class BookController {
 	
 	private final BookServiceImpl bookService;
 	
-	@PostMapping()
-	public ResponseEntity<BookDto> addBook(@RequestBody(required = false) BookDto bookDto){
-		log.info("Start of addBook");
-		BookDto addedBook = bookService.addBook(bookDto);
-		log.info("End of addBook");
-		return ResponseEntity.ok().body(addedBook);
-	}
+	//add a book resource
+//	public ResponseEntity<BookDto> addBook(){
+//	}
 	
 	//retrieve a book with specific id
-	@GetMapping("/{id}")
-	public ResponseEntity<BookDto> getBookById(
-			@PathVariable
-					long id) {
-		log.info("Start of getBookById");
-		BookDto bookById = bookService.getBookById(id);
-		log.info("End of getBookById");
-		return ResponseEntity.ok().body(bookById);
-	}
+//	public ResponseEntity<BookDto> getBookById() {
+//	}
 	
 	
-	//update a book with specific id
-	@PutMapping("/{id}")
-	public ResponseEntity<BookDto> updateBook(
-			@PathVariable("id")
-					long id,
-			@RequestBody
-					BookDto bookDto) {
-		log.info("Start of updateBook");
-		BookDto updatedBook = bookService.updateBook(id, bookDto);
-		log.info("End of updateBook");
-		return ResponseEntity.ok().body(updatedBook);
-	}
+//	//update a book with specific id
+//	public ResponseEntity<BookDto> updateBook() {
+//
+//	}
 	
 	
 	//return all the books
-	@GetMapping()
-	public ResponseEntity<List<BookDto>> getBooks() {
-		log.info("Start of getBooks");
-		List<BookDto> allbooks = bookService.getAllBooks();
-		log.info("End of getBooks");
-		return ResponseEntity.ok().body(allbooks);
-	}
-	
+//	public ResponseEntity<List<BookDto>> getBooks() {
+//	}
+//
 	
 	//delete a book of specific id
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteBook(
-			@PathVariable
-					Long id) {
-		log.info("Start of deleteBook");
-		bookService.deleteById(id);
-		log.info("End of deleteBook");
-		return ResponseEntity.noContent().build();
-	}
+//	public ResponseEntity<Void> deleteBook() {
+//	}
 	
 }
