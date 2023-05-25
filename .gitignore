@@ -1,0 +1,49 @@
+HELP.md
+target/
+output/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+**/.DS_Store
+.env
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.dylib
+### Gradle ###
+.gradle/
+gradle.properties
+### Secure Bundle ###
+*.properties
+### Terraform ###
+.terraform
+.terraform/**
+*.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock
+*.tfstate.lock.info
+*.tfvars
+*.hcl
+!.env_sample.tfvars
+!backend_dev.hcl
+!backend_prod.hcl
+### SAM ###
+.aws-sam
+# Custom
+.env
+# maven
+mvnw
+mvnw.cmd
+# Others
+*.iml
